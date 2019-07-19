@@ -1,6 +1,6 @@
 using System;
 
-namespace Sigcorp.Models
+namespace Sigcorp.Models.ViewModel
 {
     public class ErrorViewModel
     {

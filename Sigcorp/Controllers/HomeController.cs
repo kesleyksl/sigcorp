@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Sigcorp.Models;
+using Sigcorp.Models.ViewModel;
 
 namespace Sigcorp.Controllers
 {

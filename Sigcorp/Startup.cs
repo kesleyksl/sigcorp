@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Sigcorp.Models;
 
 namespace Sigcorp
 {
@@ -33,6 +35,10 @@ namespace Sigcorp
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDbContext<SigcorpContext>(options =>
+                    options.UseMySql(Configuration.GetConnectionString("SigcorpContext"), builder =>
+                        builder.MigrationsAssembly("Sigcorp")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
