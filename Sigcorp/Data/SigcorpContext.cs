@@ -14,5 +14,9 @@ namespace Sigcorp.Models
         }
 
         public DbSet<Sigcorp.Models.Produto> Produto { get; set; }
+
+        public DbSet<Sigcorp.Models.Cliente> Cliente { get; set; }
+
+        public DbSet<Sigcorp.Models.PedidoCompra> PedidoCompra { get; set; }
     }
 }
