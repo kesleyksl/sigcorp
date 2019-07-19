@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Sigcorp.Models;
 using Sigcorp.Data;
+using Sigcorp.Services;
 namespace Sigcorp
 {
     public class Startup
@@ -40,6 +41,7 @@ namespace Sigcorp
                     options.UseMySql(Configuration.GetConnectionString("SigcorpContext"), builder =>
                         builder.MigrationsAssembly("Sigcorp")));
             services.AddScoped<SeedingService>();
+            services.AddScoped<ClienteService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
