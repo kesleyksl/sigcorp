@@ -46,7 +46,17 @@ namespace Sigcorp.Services
             {
                 throw new NotFoundException("Id não encontrado");
             }
-            _context.Update(obj);
+
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch(DbConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
+            
         }
     }
 }

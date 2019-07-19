@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Sigcorp.Models;
 using Sigcorp.Services;
+using Sigcorp.Services.Exceptions;
 
 namespace Sigcorp.Controllers
 {
@@ -72,7 +73,43 @@ namespace Sigcorp.Controllers
 
             return View(obj);
         }
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var obj = _clienteService.BuscaPorID(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
 
-        
+            return View(obj);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, Cliente cliente)
+        {
+            if(id != cliente.ClienteID)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                _clienteService.Update(cliente);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (NotFoundException)
+            {
+                return NotFound();
+            }
+            catch (DbConcurrencyException)
+            {
+                return BadRequest();
+            }
+        }
+
+
     }
 }
