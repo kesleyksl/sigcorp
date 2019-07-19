@@ -42,6 +42,8 @@ namespace Sigcorp
                         builder.MigrationsAssembly("Sigcorp")));
             services.AddScoped<SeedingService>();
             services.AddScoped<ClienteService>();
+            services.AddScoped<ProdutoService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
