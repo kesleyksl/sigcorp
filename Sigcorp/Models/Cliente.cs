@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace Sigcorp.Models
 {
     public class Cliente
@@ -13,7 +14,8 @@ namespace Sigcorp.Models
         [Display(Name = "Nome")]
         public string NomeCompleto { get; set; }
         [Display(Name = "CPF")]
-        [Cpf(ErrorMessage = "O valor '{0}' é inválido para CPF")]
+        
+        [RegularExpression(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$")]
         public string Cpf { get; set; }
 
         public Cliente()
@@ -22,9 +24,13 @@ namespace Sigcorp.Models
 
         public Cliente(int clienteID, string nomeCompleto, string cpf)
         {
-            ClienteID = clienteID;
-            NomeCompleto = nomeCompleto;
-            Cpf = cpf;
+            
+            
+                ClienteID = clienteID;
+                NomeCompleto = nomeCompleto;
+                Cpf = cpf;
+
+           
         }
 
         

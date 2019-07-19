@@ -51,12 +51,12 @@ namespace Sigcorp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingService)
         {
-            var ptBR = new CultureInfo("pt-BR");
+            var usEN = new CultureInfo("us-EN");
             var localizationOptions = new RequestLocalizationOptions
             {
-                DefaultRequestCulture = new RequestCulture(ptBR),
-                SupportedCultures = new List<CultureInfo> { ptBR },
-                SupportedUICultures = new List<CultureInfo> { ptBR}
+                DefaultRequestCulture = new RequestCulture(usEN),
+                SupportedCultures = new List<CultureInfo> { usEN },
+                SupportedUICultures = new List<CultureInfo> { usEN}
 
             };
             app.UseRequestLocalization(localizationOptions);
