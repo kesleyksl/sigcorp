@@ -19,12 +19,13 @@ namespace Sigcorp.Models
         {
         }
 
-        public PedidoCompra(int pedidoCompraID, int numeroPedido, Cliente cliente, double total)
+        public PedidoCompra(int pedidoCompraID, int numeroPedido, Cliente cliente)
         {
             PedidoCompraID = pedidoCompraID;
             NumeroPedido = numeroPedido;
             Cliente = cliente;
-            Total = total;
+            Total = TotalPedido();
+            
         }
 
         public void AddProduto(Produto produto)
@@ -39,6 +40,7 @@ namespace Sigcorp.Models
         public double TotalPedido()
         {
             var total = Produtos.Sum(p => p.ValorUnitario);
+            
             return total;
         }
     }

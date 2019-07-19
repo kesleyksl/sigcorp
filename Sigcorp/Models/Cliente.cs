@@ -23,6 +23,6 @@ namespace Sigcorp.Models
             Cpf = cpf;
         }
 
-        public int MyProperty { get; set; }
+        
     }
 }
