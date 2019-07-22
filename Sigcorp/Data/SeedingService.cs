@@ -21,17 +21,17 @@ namespace Sigcorp.Data
             {
                 return; //Banco de dados ja populado
             }
-            Produto p1 = new Produto { ProdutoID = 1, Nome = "Perfume 212", ValorUnitario = 250.00 };
-            Produto p2 = new Produto { ProdutoID = 2, Nome = "Perfume Animale", ValorUnitario = 180.00 };
-            Produto p3 = new Produto { ProdutoID = 3, Nome = "Perfume Polo Black", ValorUnitario = 400.00 };
-            Produto p4 = new Produto { ProdutoID = 4, Nome = "Perfume 1Million", ValorUnitario = 420.00 };
-            Produto p5 = new Produto { ProdutoID = 5, Nome = "Perfume Angel", ValorUnitario = 300.00 };
-            Produto p6 = new Produto { ProdutoID = 6, Nome = "Perfume Spice Bomb", ValorUnitario = 500.00 };
-            Produto p7 = new Produto { ProdutoID = 7, Nome = "Perfume Invictus", ValorUnitario = 4000.00 };
-            Produto p8 = new Produto { ProdutoID = 8, Nome = "Perfume Ck BE", ValorUnitario = 280.00 };
-            Produto p9 = new Produto { ProdutoID = 9, Nome = "Perfume Secrets", ValorUnitario = 180.00 };
-            Produto p10 = new Produto { ProdutoID = 10, Nome = "Perfume 212 Vip", ValorUnitario = 350.00 };
-            Produto p11= new Produto { ProdutoID = 11, Nome = "Perfume Bvlgari", ValorUnitario = 200.00 };
+            Produto p1 = new Produto (1, "Teste", 430.34);
+            Produto p2 = new Produto (  2, "Perfume Animale",  180.00 );
+            Produto p3 = new Produto ( 3, "Perfume Polo Black", 400.00 );
+            Produto p4 = new Produto (4, "Perfume 1Million", 420.00 );
+            Produto p5 = new Produto (5, "Perfume Angel",  300.00 );
+            Produto p6 = new Produto ( 6, "Perfume Spice Bomb",  500.00 );
+            Produto p7 = new Produto ( 7, "Perfume Invictus", 4000.00 );
+            Produto p8 = new Produto ( 8,  "Perfume Ck BE", 280.00 );
+            Produto p9 = new Produto (9, "Perfume Secrets", 180.00 );
+            Produto p10 = new Produto (10, "Perfume 212 Vip", 350.00 );
+            Produto p11= new Produto (11, "Perfume Bvlgari",  200.00 );
 
             Cliente c1 = new Cliente {ClienteID = 1, NomeCompleto = "João da Silva", Cpf = "333.444.444-76" };
             Cliente c2 = new Cliente { ClienteID = 2, NomeCompleto = "João Pereira", Cpf = "333.444.532-76" };

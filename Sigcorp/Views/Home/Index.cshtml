@@ -1,8 +1,41 @@
-﻿@{
+﻿
+@model IEnumerable<Sigcorp.Models.Produto>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Página criada para teste na empresa SIGCORP.</h1>
-    
+
+
+</div>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+
+
+
+
+            @foreach (var p in Model)
+            {
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+
+
+                            <p class="card-text text-center"> @Html.DisplayFor(modelItem => p.Nome)</p>
+                            <p class="card-text text-center"> @Html.DisplayFor(model => p.ValorUnitario)</p>
+                           
+                            <input type="submit" value="Comprar" class="btn btn-light" />
+                            <input type="submit" value="Adicionar ao carrinho" class="btn btn-dark" />
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
 </div>

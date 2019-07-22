@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Sigcorp.Models;
 using Sigcorp.Models.ViewModel;
 
@@ -11,12 +12,19 @@ namespace Sigcorp.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly SigcorpContext _context;
+        public HomeController(SigcorpContext context)
         {
-            return View();
+            _context = context;
         }
 
-        
+        // GET: Produtos
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Produto.ToListAsync());
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
