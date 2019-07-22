@@ -18,11 +18,6 @@ namespace Sigcorp.Models
         [DisplayFormat(DataFormatString ="{0:F2}")]
         public double ValorUnitario { get; set; }
 
-        public Produto(int produtoID, string nome, double valorUnitario)
-        {
-            ProdutoID = produtoID;
-            Nome = nome;
-            ValorUnitario = valorUnitario;
-        }
+        
     }
 }
